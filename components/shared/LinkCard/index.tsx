@@ -11,8 +11,8 @@ import Image from "next/image";
 
 export default function LinkCard() {
   return (
-    <Card className="flex flex-row items-center justify-center p-12 rounded-3xl">
-      <CardContent>
+    <Card className="flex flex-row items-center justify-center rounded-3xl">
+      <CardContent className="p-12 w-96">
         <CardHeader>
           <CardTitle>Technology</CardTitle>
           <CardDescription>
@@ -21,8 +21,10 @@ export default function LinkCard() {
         </CardHeader>
         <CardFooter>Explore category</CardFooter>
       </CardContent>
-      <CardContent>
-        <div className="flex items-center justify-center w-32 h-32">hello</div>
+      <CardContent className="w-96">
+        <div className="flex justify-center w-full h-full items- bg-slate-700">
+          hello
+        </div>
       </CardContent>
     </Card>
   );
