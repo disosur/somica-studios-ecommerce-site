@@ -1,4 +1,5 @@
 import LinkCard from "@/components/shared/LinkCard";
+import ProductCard from "@/components/shared/ProductCard";
 import Image from "next/image";
 
 export default function Home() {
@@ -45,13 +46,35 @@ export default function Home() {
       </section>
 
       {/*Best Sellers section*/}
-      <section></section>
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-wrap -m-4">
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
 
       {/*Our Story section*/}
       <section></section>
 
-      {/*Featured section*/}
-      <section></section>
+      {/*
+      New Products section
+      This will only added when there's a new product, if not, this section wont be showed
+      */}
+
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-wrap -m-4">
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
 
       {/*offering and newsletter section*/}
       <section className="text-gray-600 body-font">
