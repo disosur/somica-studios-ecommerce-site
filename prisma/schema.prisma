@@ -13,8 +13,6 @@ model Product {
   imageURL    String[]
   name        String
   price       Int
-  bestSeller  Boolean
-  category    String //controllers || Desk || Plants || consoles
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
