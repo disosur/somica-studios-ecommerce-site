@@ -5,7 +5,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi2";
 
 export default function Navbar() {
   return (
-    <header className="fixed z-50 w-screen text-gray-600 bg-white body-font">
+    <header className="fixed z-50 w-screen text-gray-600 bg-white shadow body-font">
       <div className="container flex flex-row items-center justify-center gap-10 p-5 mx-auto md:flex-row">
         <Link href="/" className="font-medium text-gray-900 title-font md:mb-0">
           <span className="ml-3 text-xl">Somica</span>

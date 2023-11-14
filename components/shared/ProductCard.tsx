@@ -24,7 +24,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <Image
             className="rounded-2xl"
             src={product.imageURL[0]}
-            alt="image"
+            alt={product.name}
             width={350}
             height={350}
           />
