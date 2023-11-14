@@ -1,12 +1,18 @@
 import ProductCard from "@/components/shared/ProductCard";
 import { Button } from "@/components/ui/button";
+import { prisma } from "@/lib/db/prisma";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const products = await prisma.product.findMany({
+    orderBy: { id: "desc" },
+  });
+
   return (
     <main>
+      {/*Hero Section*/}
       <section className="text-gray-600 body-font">
-        <div className="container flex flex-col items-center justify-center px-5 py-24 mx-auto">
+        <div className="container flex flex-col items-center justify-center h-screen px-5 py-24 mx-auto">
           <div className="w-full text-center lg:w-2/3">
             <h1 className="mb-4 text-3xl font-medium text-gray-900 title-font sm:text-4xl">
               Microdosing synth tattooed vexillologist
@@ -30,6 +36,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/*Featured Section*/}
       <section className="text-gray-600 body-font">
         <div className="container flex flex-wrap px-5 py-24 mx-auto">
           <div className="mx-auto lg:w-2/3">
@@ -127,20 +134,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/*Best Seller Section*/}
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="text-lg font-medium">
-            <h1>Best sellers</h1>
+            <h2>Best sellers</h2>
           </div>
-          <div className="flex flex-wrap -m-4">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+          <div className="flex flex-wrap justify-center gap-4">
+            {products
+              .filter((product) => product.bestSeller)
+              .slice(0, 3)
+              .map((product) => (
+                <ProductCard product={product} key={product.id} />
+              ))}
           </div>
         </div>
       </section>
 
+      {/*About Section*/}
       <section className="text-gray-600 body-font">
         <div className="container flex flex-wrap px-5 py-24 mx-auto">
           <div className="w-full mb-10 overflow-hidden rounded-lg lg:w-1/2 lg:mb-0">
@@ -266,6 +277,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/*CTA Section*/}
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col items-start mx-auto lg:w-2/3 sm:flex-row sm:items-center">
