@@ -1,12 +1,13 @@
-import React from "react";
+import React, { cache } from "react";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/shared/ProductCard";
-import Link from "next/link";
 import { prisma } from "@/lib/db/prisma";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import PriceTag from "@/components/ui/priceTag";
 import { Separator } from "@/components/ui/separator";
+import { Metadata } from "next";
+import CTA from "@/components/Coded sections/CTA";
 
 type ProductPageProps = {
   params: {
@@ -14,11 +15,30 @@ type ProductPageProps = {
   };
 };
 
+const getProduct = cache(async (id: string) => {
+  const product = await prisma.product.findUnique({ where: { id } });
+  if (!product) notFound();
+  return product;
+});
+
+export async function generateMetadata({
+  params: { id },
+}: ProductPageProps): Promise<Metadata> {
+  const product = await getProduct(id);
+
+  return {
+    title: product.name,
+    description: product.description,
+    openGraph: {
+      images: [{ url: product.imageURL[0] }],
+    },
+  };
+}
+
 export default async function ProductPage({
   params: { id },
 }: ProductPageProps) {
-  const product = await prisma.product.findUnique({ where: { id } });
-  if (!product) notFound();
+  const product = await getProduct(id);
 
   const products = await prisma.product.findMany({
     orderBy: { id: "desc" },
@@ -71,19 +91,7 @@ export default async function ProductPage({
         </div>
       </section>
 
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col items-start mx-auto lg:w-2/3 sm:flex-row sm:items-center">
-            <h2 className="flex-grow text-2xl font-medium text-gray-900 sm:pr-16 title-font">
-              Slow-carb next level shoindxgoitch ethical authentic, scenester
-              sriracha forage.
-            </h2>
-            <Link href="/shop">
-              <Button>Shop Now</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTA />
     </main>
   );
 }
