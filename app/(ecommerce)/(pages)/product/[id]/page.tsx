@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { Metadata } from "next";
 import CTA from "@/components/Coded sections/CTA";
 import { incrementProductQuantity } from "./actions";
+import AddToCartButton from "./AddToCartButton";
 
 type ProductPageProps = {
   params: {
@@ -69,7 +70,10 @@ export default async function ProductPage({
               <Separator />
               <div className="flex justify-between">
                 <PriceTag price={product.price} />
-                <Button>Add to cart</Button>
+                <AddToCartButton
+                  productId={product.id}
+                  incrementProductQuantity={incrementProductQuantity}
+                />
               </div>
             </div>
           </div>
