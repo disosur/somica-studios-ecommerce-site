@@ -8,6 +8,7 @@ import PriceTag from "@/components/ui/priceTag";
 import { Separator } from "@/components/ui/separator";
 import { Metadata } from "next";
 import CTA from "@/components/Coded sections/CTA";
+import { incrementProductQuantity } from "./actions";
 
 type ProductPageProps = {
   params: {
