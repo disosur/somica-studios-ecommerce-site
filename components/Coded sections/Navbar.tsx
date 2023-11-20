@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { HiOutlineShoppingCart } from "react-icons/hi2";
+import CartView from "../shared/CartView";
 
 export default function Navbar() {
   return (
@@ -17,14 +17,9 @@ export default function Navbar() {
           <Link href="/about" className="mr-5 hover:text-gray-900">
             About
           </Link>
-          <Link href="/contact" className="mr-5 hover:text-gray-900">
-            Contact
-          </Link>
         </nav>
         <div className="flex gap-2">
-          <Button variant="outline">
-            <HiOutlineShoppingCart />
-          </Button>
+          <CartView />
           <Link href="/">
             <Button>Log in</Button>
           </Link>

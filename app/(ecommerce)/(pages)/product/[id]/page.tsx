@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { Metadata } from "next";
 import CTA from "@/components/Coded sections/CTA";
 import { incrementProductQuantity } from "./actions";
-import AddToCartButton from "./AddToCartButton";
+import AddToCartButton from "@/components/shared/AddToCartButton";
 
 type ProductPageProps = {
   params: {
