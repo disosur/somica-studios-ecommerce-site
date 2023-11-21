@@ -1,10 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "../ui/button";
 import CartView from "../shared/CartView";
 import Login from "../shared/Login";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const session = await getServerSession(authOptions);
   return (
     <header className="fixed z-50 w-screen text-gray-600 bg-white shadow body-font">
       <div className="container flex flex-row items-center justify-center gap-10 p-5 mx-auto md:flex-row">
@@ -21,7 +23,7 @@ export default function Navbar() {
         </nav>
         <div className="flex gap-2">
           <CartView />
-          <Login />
+          <Login session={session} />
         </div>
       </div>
     </header>
