@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import CartView from "../shared/CartView";
+import Login from "../shared/Login";
 
 export default function Navbar() {
   return (
@@ -20,9 +21,7 @@ export default function Navbar() {
         </nav>
         <div className="flex gap-2">
           <CartView />
-          <Link href="/">
-            <Button>Log in</Button>
-          </Link>
+          <Login />
         </div>
       </div>
     </header>
