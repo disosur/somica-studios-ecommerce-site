@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { signIn, signOut } from "next-auth/react";
-import { LoginProps } from "@/app/types/LogInProps";
+import { LoginProps } from "@/@types/LogInProps";
 
 export default function Login({ session }: LoginProps) {
   const user = session?.user;

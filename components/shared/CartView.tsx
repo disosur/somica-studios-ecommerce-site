@@ -11,7 +11,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi2";
 import CartList from "./CartList";
 import { currencyFormat } from "@/lib/currency";
 import { getCart } from "@/lib/db/cart";
-import { LoginProps } from "@/app/types/LogInProps";
+import { LoginProps } from "@/@types/LogInProps";
 
 export default async function CartView({ session }: LoginProps) {
   const cart = await getCart();
