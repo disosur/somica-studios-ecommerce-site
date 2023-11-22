@@ -2,8 +2,6 @@
 
 import { useState, useTransition } from "react";
 import { Button } from "@/components/ui/button";
-import { LoginProps } from "@/@types/LogInProps";
-import { redirect } from "next/navigation";
 
 type AddToCartButtonProps = {
   productId: string;

@@ -23,7 +23,7 @@ export default async function Navbar() {
           </Link>
         </nav>
         <div className="flex gap-2">
-          <CartView session={login} />
+          <CartView />
           <Login session={login} />
         </div>
       </div>

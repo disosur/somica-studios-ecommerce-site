@@ -1,5 +1,4 @@
 import React, { cache } from "react";
-import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/shared/ProductCard";
 import { prisma } from "@/lib/db/prisma";
 import { notFound } from "next/navigation";
