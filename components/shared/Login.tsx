@@ -1,10 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
-import Link from "next/link";
-import { Session } from "next-auth";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,10 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { signIn, signOut } from "next-auth/react";
-
-type LoginProps = {
-  session: Session | null;
-};
+import { LoginProps } from "@/app/types/LogInProps";
 
 export default function Login({ session }: LoginProps) {
   const user = session?.user;

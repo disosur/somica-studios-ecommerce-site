@@ -2,6 +2,8 @@
 
 import { useState, useTransition } from "react";
 import { Button } from "@/components/ui/button";
+import { LoginProps } from "@/app/types/LogInProps";
+import { redirect } from "next/navigation";
 
 type AddToCartButtonProps = {
   productId: string;
@@ -20,10 +22,8 @@ export default function AddToCartButton({
       <Button
         className="btn-primary btn"
         onClick={() => {
-          setSuccess(false);
           startTransition(async () => {
             await incrementProductQuantity(productId);
-            setSuccess(true);
           });
         }}>
         Add to Cart

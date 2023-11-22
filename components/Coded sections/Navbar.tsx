@@ -6,7 +6,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export default async function Navbar() {
-  const session = await getServerSession(authOptions);
+  const login = await getServerSession(authOptions);
+
   return (
     <header className="fixed z-50 w-screen text-gray-600 bg-white shadow body-font">
       <div className="container flex flex-row items-center justify-center gap-10 p-5 mx-auto md:flex-row">
@@ -22,8 +23,8 @@ export default async function Navbar() {
           </Link>
         </nav>
         <div className="flex gap-2">
-          <CartView />
-          <Login session={session} />
+          <CartView session={login} />
+          <Login session={login} />
         </div>
       </div>
     </header>
