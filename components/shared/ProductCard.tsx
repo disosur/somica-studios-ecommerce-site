@@ -19,19 +19,19 @@ type ProductCardProps = {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={"/product/" + product.id}>
-      <Card className=" w-[25rem]  h-[34rem]">
+      <Card className=" w-[25rem]  h-[37rem] bg-background border-2">
         <CardHeader className="gap-2">
           <Image
-            className="rounded-2xl"
+            className="border-2 rounded-2xl"
             src={product.imageURL[0]}
             alt={product.name}
             width={350}
             height={350}
           />
           <CardTitle className="break-word">{product.name}</CardTitle>
-          <CardDescription>{product.category}</CardDescription>
+          <h4>{product.category}</h4>
         </CardHeader>
-        <CardContent>
+        <CardContent className="text-lg font-bold">
           <PriceTag price={product.price} />
         </CardContent>
       </Card>

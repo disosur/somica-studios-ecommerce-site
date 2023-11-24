@@ -27,14 +27,14 @@ export default function Login({ session }: LoginProps) {
               <AvatarFallback className=" bg-primary" />
             </Avatar>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuLabel>welcome {user.name}</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <Button onClick={() => signOut({ callbackUrl: "/" })}>
-                Log out
-              </Button>
-            </DropdownMenuItem>
+          <DropdownMenuContent className="flex flex-col items-center w-40 break-words border-2 bg-background">
+            <DropdownMenuLabel>welcome</DropdownMenuLabel>
+            <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
+            <Button
+              variant="destructive"
+              onClick={() => signOut({ callbackUrl: "/" })}>
+              Log out
+            </Button>
           </DropdownMenuContent>
         </DropdownMenu>
       ) : (

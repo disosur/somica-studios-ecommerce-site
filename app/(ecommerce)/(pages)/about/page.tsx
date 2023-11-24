@@ -1,32 +1,29 @@
 import React from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import AboutCard from "@/components/shared/AboutCard";
 import CTA from "@/components/Coded sections/CTA";
+import Image2 from "@/public/image-2.jpg";
+import Image from "next/image";
 
 export default function About() {
   return (
     <main>
-      <section className="text-gray-600 body-font">
+      <section>
         <div className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row">
           <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:items-start md:text-left md:mb-0">
-            <h1 className="mb-4 text-3xl font-medium text-gray-900 title-font sm:text-4xl">
-              Before they sold out
-              <br className="hidden lg:inline-block" />
-              readymade gluten
-            </h1>
-            <p className="mb-8 leading-relaxed">
-              Copper mug try-hard pitchfork pour-over freegan heirloom neutra
-              air plant cold-pressed tacos poke beard tote bag. Heirloom echo
-              park mlkshk tote bag selvage hot chicken authentic tumeric
-              truffaut hexagon try-hard chambray.
+            <h2>Welcome to Somica Studios</h2>
+            <p>
+              At Somica Studios, we believe in the magic of creation. Our
+              journey began with a passion for bringing imagination to life
+              through 3D printing. What started as a dream has now evolved into
+              a haven for unique, whimsical, and enchanting 3D printed models.
             </p>
           </div>
           <div className="w-5/6 lg:max-w-lg lg:w-full md:w-1/2">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
-              src="https://dummyimage.com/720x600"
+            <Image
+              alt="Somica Studios"
+              className="object-cover object-center w-full border-2"
+              src={Image2}
+              height={600}
+              width={720}
             />
           </div>
         </div>

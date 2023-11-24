@@ -12,9 +12,9 @@ export default async function store() {
 
   return (
     <main>
-      <section className="text-gray-600 body-font">
+      <section>
         <div className="container px-5 py-24 mx-auto">
-          <div className="text-lg font-medium">
+          <div className="flex justify-center">
             <h1>Our Products</h1>
           </div>
           <div className="flex flex-wrap justify-center gap-4 m-4">

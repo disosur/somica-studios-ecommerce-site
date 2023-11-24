@@ -47,42 +47,45 @@ export default async function ProductPage({
 
   return (
     <main>
-      <section className="overflow-hidden text-gray-600 body-font">
+      <section className="overflow-hidden body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap mx-auto lg:w-4/5">
             <Image
               alt={product.name}
-              className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto"
+              className="object-cover object-center w-full h-64 border-2 rounded lg:w-1/2 lg:h-auto"
               src={product.imageURL[0]}
               height={400}
               width={400}
             />
-            <div className="w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
-              <h2 className="text-sm tracking-widest text-gray-500 title-font">
-                {product.category}
-              </h2>
-              <h1 className="mb-1 text-3xl font-medium text-gray-900 title-font">
-                {product.name}
-              </h1>
-
-              <p className="leading-relaxed">{product.description}</p>
-              <Separator />
-              <div className="flex justify-between">
-                <PriceTag price={product.price} />
-                <AddToCartButton
-                  productId={product.id}
-                  incrementProductQuantity={incrementProductQuantity}
-                />
+            <div className="flex flex-col justify-between w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
+              <div className="gap-4">
+                <h2 className="text-sm tracking-widesttitle-font">
+                  {product.category}
+                </h2>
+                <h1 className="mb-1 text-3xl font-medium text-gray-900 title-font">
+                  {product.name}
+                </h1>
+                <p className="leading-relaxed">{product.description}</p>
+              </div>
+              <div>
+                <Separator />
+                <div className="flex justify-between">
+                  <PriceTag price={product.price} />
+                  <AddToCartButton
+                    productId={product.id}
+                    incrementProductQuantity={incrementProductQuantity}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="text-gray-600 body-font">
+      <section>
         <div className="container px-5 py-24 mx-auto">
-          <div className="text-lg font-medium">
-            <h2>You might also like</h2>
+          <div>
+            <h2>You might also like...</h2>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {products

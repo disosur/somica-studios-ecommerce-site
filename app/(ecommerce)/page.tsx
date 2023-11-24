@@ -3,6 +3,8 @@ import ProductCard from "@/components/shared/ProductCard";
 import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/db/prisma";
 import Link from "next/link";
+import Image1 from "@/public/image-1.jpg";
+import Image from "next/image";
 
 export default async function Home() {
   const products = await prisma.product.findMany({
@@ -12,24 +14,24 @@ export default async function Home() {
   return (
     <main>
       {/*Hero Section*/}
-      <section className="text-gray-600 body-font">
+      <section>
         <div className="container flex flex-col items-center justify-center h-screen px-5 py-24 mx-auto">
           <div className="w-full text-center lg:w-2/3">
-            <h1 className="mb-4 text-3xl font-medium text-gray-900 title-font sm:text-4xl">
-              Somica Studios
-            </h1>
-            <p className="mb-8 leading-relaxed">
+            <h1>Somica Studios</h1>
+            <h4 className="mb-8">
               Discover a world of cuteness as we bring your imagination to life
               through our high-quality 3D printed products. From whimsical
               organizers to playful gaming peripherals, we've curated a range
               that combines practicality with charm.
-            </p>
+            </h4>
             <div className="flex justify-center gap-4">
               <Link href="/shop">
                 <Button>Shop Now</Button>
               </Link>
               <Link href="/about">
-                <Button variant="outline">Who we are</Button>
+                <Button className=" border-border" variant="outline">
+                  Who we are
+                </Button>
               </Link>
             </div>
           </div>
@@ -37,9 +39,9 @@ export default async function Home() {
       </section>
 
       {/*Best Seller Section*/}
-      <section className="text-gray-600 body-font">
+      <section>
         <div className="container px-5 py-24 mx-auto">
-          <div className="text-lg font-medium">
+          <div className="flex justify-center">
             <h2>Best sellers</h2>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
@@ -54,125 +56,58 @@ export default async function Home() {
       </section>
 
       {/*About Section*/}
-      <section className="text-gray-600 body-font">
+      <section>
         <div className="container flex flex-wrap px-5 py-24 mx-auto">
           <div className="w-full mb-10 overflow-hidden rounded-lg lg:w-1/2 lg:mb-0">
-            <img
-              alt="feature"
-              className="object-cover object-center w-full h-full"
-              src="https://dummyimage.com/460x500"
+            <Image
+              alt="Magical Forest"
+              className="object-cover object-center w-full h-full border-2"
+              src={Image1}
+              height={500}
+              width={460}
             />
           </div>
           <div className="flex flex-col flex-wrap -mb-10 text-center lg:py-6 lg:w-1/2 lg:pl-12 lg:text-left">
             <div className="flex flex-col items-center mb-10 lg:items-start">
-              <div className="inline-flex items-center justify-center w-12 h-12 mb-5 text-indigo-500 bg-indigo-100 rounded-full">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24">
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                </svg>
-              </div>
               <div className="flex-grow">
                 <h2 className="mb-3 text-lg font-medium text-gray-900 title-font">
-                  Shooting Stars
+                  Enchanting Forest Creatures
                 </h2>
                 <p className="text-base leading-relaxed">
-                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                  taxidermy. Gastropub indxgo juice poutine.
+                  Step into a world of wonder with our Enchanting Forest
+                  Creatures collection. These adorable 3D printed models bring
+                  the magic of mystical forests to life. Perfect for nature
+                  lovers and fantasy enthusiasts, these creatures will add a
+                  touch of enchantment to any space.
                 </p>
-                <a className="inline-flex items-center mt-3 text-indigo-500">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
               </div>
             </div>
             <div className="flex flex-col items-center mb-10 lg:items-start">
-              <div className="inline-flex items-center justify-center w-12 h-12 mb-5 text-indigo-500 bg-indigo-100 rounded-full">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24">
-                  <circle cx={6} cy={6} r={3} />
-                  <circle cx={6} cy={18} r={3} />
-                  <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12" />
-                </svg>
-              </div>
               <div className="flex-grow">
                 <h2 className="mb-3 text-lg font-medium text-gray-900 title-font">
-                  The Catalyzer
+                  Futuristic Tech Marvels
                 </h2>
                 <p className="text-base leading-relaxed">
-                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                  taxidermy. Gastropub indxgo juice poutine.
+                  Explore the future with our Futuristic Tech Marvels
+                  collection. These cutting-edge 3D printed models showcase the
+                  perfect blend of art and technology. Whether you're a tech
+                  enthusiast or a collector of modern marvels, these pieces are
+                  sure to spark excitement and curiosity.
                 </p>
-                <a className="inline-flex items-center mt-3 text-indigo-500">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
               </div>
             </div>
             <div className="flex flex-col items-center mb-10 lg:items-start">
-              <div className="inline-flex items-center justify-center w-12 h-12 mb-5 text-indigo-500 bg-indigo-100 rounded-full">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24">
-                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                  <circle cx={12} cy={7} r={4} />
-                </svg>
-              </div>
               <div className="flex-grow">
                 <h2 className="mb-3 text-lg font-medium text-gray-900 title-font">
-                  Neptune
+                  Whimsical Wonderland
                 </h2>
                 <p className="text-base leading-relaxed">
-                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                  taxidermy. Gastropub indxgo juice poutine.
+                  Immerse yourself in a Whimsical Wonderland with our charming
+                  collection. These 3D printed models capture the essence of
+                  fantasy and joy. Whether you're young or young at heart, these
+                  whimsical wonders will bring a smile to your face and a touch
+                  of magic to your space.
                 </p>
-                <a className="inline-flex items-center mt-3 text-indigo-500">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
               </div>
             </div>
           </div>
