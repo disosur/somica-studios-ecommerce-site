@@ -11,7 +11,7 @@ export default async function Navbar() {
   const login = await getServerSession(authOptions);
 
   return (
-    <header className="shadow-lg ">
+    <header className="shadow-xl ">
       <div className="container flex flex-row items-center justify-between gap-10 p-5 mx-auto md:flex-row">
         <nav>
           <Link href="shop" className="mr-5 hover:text-gray-900">

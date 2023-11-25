@@ -57,6 +57,7 @@ export default async function ProductPage({
               height={400}
               width={400}
             />
+
             <div className="flex flex-col justify-between w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
               <div className="gap-4">
                 <h2 className="text-sm tracking-widesttitle-font">
