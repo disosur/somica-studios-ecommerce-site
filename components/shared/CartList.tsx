@@ -5,13 +5,16 @@ import { currencyFormat } from "@/lib/currency";
 import Image from "next/image";
 import Link from "next/link";
 import { useTransition } from "react";
-import { Button } from "../ui/button";
 
 type CartListProps = {
   cartItem: CartItemWithProduct;
+  setProductQuantity: (productId: string, quantity: number) => Promise<void>;
 };
 
-export default function CartList({ cartItem: { product } }: CartListProps) {
+export default function CartList({
+  cartItem: { product, quantity },
+  setProductQuantity,
+}: CartListProps) {
   const [isPending, startTransition] = useTransition();
 
   const quantityOptions: JSX.Element[] = [];
@@ -43,7 +46,21 @@ export default function CartList({ cartItem: { product } }: CartListProps) {
         </div>
       </div>
       <div className="divider" />
-      <Button variant="destructive">Delete</Button>
+      <div className="flex items-center gap-2 my-1">
+        Quantity:
+        <select
+          className="select-bordered border-2 select w-full max-w-[80px]"
+          defaultValue={quantity}
+          onChange={(e) => {
+            const newQuantity = parseInt(e.currentTarget.value);
+            startTransition(async () => {
+              await setProductQuantity(product.id, newQuantity);
+            });
+          }}>
+          <option value={0}>0 (Remove)</option>
+          {quantityOptions}
+        </select>
+      </div>
     </div>
   );
 }

@@ -9,6 +9,7 @@ import { Metadata } from "next";
 import CTA from "@/components/Coded sections/CTA";
 import { incrementProductQuantity } from "../../../../actions/IncrementProductQuantity";
 import AddToCartButton from "@/components/shared/AddToCartButton";
+import Carousel from "@/components/shared/Carousel";
 
 type ProductPageProps = {
   params: {
@@ -45,18 +46,14 @@ export default async function ProductPage({
     orderBy: { id: "desc" },
   });
 
+  const images = await product.imageURL;
+
   return (
     <main>
       <section className="overflow-hidden body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap mx-auto lg:w-4/5">
-            <Image
-              alt={product.name}
-              className="object-cover object-center w-full h-64 border-2 rounded lg:w-1/2 lg:h-auto"
-              src={product.imageURL[0]}
-              height={400}
-              width={400}
-            />
+            <Carousel slides={images} />
 
             <div className="flex flex-col justify-between w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
               <div className="gap-4">

@@ -25,10 +25,6 @@ export default function AddToCartButton({
         }}>
         Add to Cart
       </Button>
-      {isPending && <span className="loading loading-spinner loading-md" />}
-      {!isPending && success && (
-        <span className="text-success">Added to Cart.</span>
-      )}
     </div>
   );
 }
