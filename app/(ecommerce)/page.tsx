@@ -28,8 +28,8 @@ export default async function Home() {
             <h4 className="mb-8">
               Discover a world of cuteness as we bring your imagination to life
               through our high-quality 3D printed products. From whimsical
-              organizers to playful gaming peripherals, we've curated a range
-              that combines practicality with charm.
+              organizers to playful gaming peripherals, we&apos;ve curated a
+              range that combines practicality with charm.
             </h4>
             <div className="flex justify-center gap-4">
               <Link href="/shop">
@@ -97,9 +97,9 @@ export default async function Home() {
                 <p className="text-base leading-relaxed">
                   Explore the future with our Futuristic Tech Marvels
                   collection. These cutting-edge 3D printed models showcase the
-                  perfect blend of art and technology. Whether you're a tech
-                  enthusiast or a collector of modern marvels, these pieces are
-                  sure to spark excitement and curiosity.
+                  perfect blend of art and technology. Whether you&apos;re a
+                  tech enthusiast or a collector of modern marvels, these pieces
+                  are sure to spark excitement and curiosity.
                 </p>
               </div>
             </div>
@@ -111,9 +111,9 @@ export default async function Home() {
                 <p className="text-base leading-relaxed">
                   Immerse yourself in a Whimsical Wonderland with our charming
                   collection. These 3D printed models capture the essence of
-                  fantasy and joy. Whether you're young or young at heart, these
-                  whimsical wonders will bring a smile to your face and a touch
-                  of magic to your space.
+                  fantasy and joy. Whether you&apos;re young or young at heart,
+                  these whimsical wonders will bring a smile to your face and a
+                  touch of magic to your space.
                 </p>
               </div>
             </div>

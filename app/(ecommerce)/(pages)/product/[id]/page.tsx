@@ -53,7 +53,7 @@ export default async function ProductPage({
       <section className="overflow-hidden body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap mx-auto lg:w-4/5">
-            <Carousel slides={images} />
+            <Carousel key={id} slides={images} />
 
             <div className="flex flex-col justify-between w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
               <div className="gap-4">
