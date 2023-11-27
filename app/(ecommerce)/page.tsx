@@ -5,6 +5,13 @@ import { prisma } from "@/lib/db/prisma";
 import Link from "next/link";
 import Image1 from "@/public/image-1.jpg";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Somica Studios",
+  description:
+    "Immerse yourself to a custom created and cute 3D printed creations that would elebate your life",
+};
 
 export default async function Home() {
   const products = await prisma.product.findMany({

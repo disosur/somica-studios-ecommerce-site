@@ -2,6 +2,13 @@ import React from "react";
 import ProductCard from "@/components/shared/ProductCard";
 import { prisma } from "@/lib/db/prisma";
 import CTA from "@/components/Coded sections/CTA";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Shop - Somica Studios",
+  description:
+    "Immerse yourself to a custom created and cute 3D printed creations that would elebate your life",
+};
 
 export default async function store() {
   const products = await prisma.product.findMany({
