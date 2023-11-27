@@ -6,7 +6,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Link from "next/link";
+
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import CartList from "./CartList";
 import { currencyFormat } from "@/lib/currency";
@@ -38,9 +38,8 @@ export default async function CartView() {
             <p className="mb-3 font-bold">
               Total: {currencyFormat(cart?.subtotal || 0)}
             </p>
-            <Link href="cart">
-              <Button>View Cart</Button>
-            </Link>
+
+            <Button>Check out</Button>
           </div>
         </DropdownMenuContent>
       </DropdownMenu>
