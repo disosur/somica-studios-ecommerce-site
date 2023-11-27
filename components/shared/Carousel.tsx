@@ -18,7 +18,7 @@ export default function Carousel({ slides }: { slides: string[] }) {
         className="flex transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${curr * 100}%)` }}>
         {slides.map((img) => (
-          <Image src={img} alt="" width={500} height={440} />
+          <Image key={img} src={img} alt="" width={500} height={440} />
         ))}
       </div>
       <div className="absolute inset-0 flex items-center justify-between p-4">
