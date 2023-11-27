@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db/prisma";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "../auth";
 import { Cart, CartItem, Prisma } from "@prisma/client";
 import { getServerSession } from "next-auth";
 import { cookies } from "next/dist/client/components/headers";
@@ -75,7 +75,6 @@ export async function createCart(): Promise<ShoppingCart> {
     subtotal: 0,
   };
 }
-
 
 export async function mergeAnonymousCartIntoUserCart(userId: string) {
   const localCartId = cookies().get("localCartId")?.value;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import CartView from "../shared/CartView";
 import Login from "../shared/Login";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
 
