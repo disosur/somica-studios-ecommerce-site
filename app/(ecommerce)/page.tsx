@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Somica Studios",
+  title: "Somica Studios - 3D maker",
   description:
     "Immerse yourself to a custom created and cute 3D printed creations that would elebate your life",
 };
