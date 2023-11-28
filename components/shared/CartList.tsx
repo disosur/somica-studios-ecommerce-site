@@ -57,7 +57,7 @@ export default function CartList({
               await setProductQuantity(product.id, newQuantity);
             });
           }}>
-          <option value={0}>0 (Remove)</option>
+          <option value={0}>0 - remove</option>
           {quantityOptions}
         </select>
       </div>
